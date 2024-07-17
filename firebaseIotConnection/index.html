@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Monitoramento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <!-- Add the Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+ 
+<body>
+    <main>
+        <div class="div-machine">
+            <div class="icon">
+                <img src="img/gerenciamento.png" width="100%">
+            </div>
+            <div class="options">
+                <h2 class="machine-options">Machine 1</h2>
+                <h2 class="machine-options">Machine 2</h2>
+                <h2 class="machine-options">Machine 3</h2>
+            </div>
+        </div>
+
+        <div class="dashboard" id="dashboard">
+            <div class="title">
+                <h2 id="status">Status: Desligado</h2>
+                <div class="time" id="time" >Hora: 11:00</div>
+            </div>
+
+            <div class="data-machine">
+                <div class="machine-photo box-info"><img src="img/torno.jpg" width="500"/></div>
+
+                <div class="box-1">
+                    <div class="main-info">                        
+                        <h2>Last maintenance</h2>
+                        <p>01/07/2024</p>
+                    </div>
+                    <div class="main-info">
+                        <h2>Next maintenance</h2>
+                        <p>01/10/2024</p>
+                    </div>
+                </div>
+
+                <div class="box-2">
+                    <div class="main-info">
+                        <h2>Problem alerts</h2>
+                        <div class="icons">
+                            <img src="img/temperatura-alta.png" id="icon-temp" width="15%">
+                            <img src="img/rpm.png" id="icon-rpm" width="15%">
+                            <img src="img/abaixo-nivel.png" id="icon-nivel" width="15%">
+                            <img src="img/gas.png" id="icon-gas" width="15%">
+                            <img src="img/atencao.png" id="icon-outros" width="15%">
+
+                        </div>
+                    </div>
+                    <div class="main-info">
+                        <h2>RPM</h2>
+                        <p id="dashboardRpm">0</p>
+                    </div>
+                    <div class="switch-container box-button">
+                        <h2>Machine</h2>
+                        <label class="switch">
+                            <input type="checkbox" id="toggleStatus">
+                            <span class="slider"></span> 
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Details</h2>
+            <div class="data-line1 data">
+                <div class="energy box">
+                    <h2>RPM Variation</h2>
+                    <canvas id="rpmChart" class="chart" width="150"></canvas>
+                </div>
+                <div class="temperature box">
+                    <h2>Temperature Variation</h2>
+                    <canvas id="temperatureChart" class="chart" width="150"></canvas>
+                </div>
+            </div>
+        </div>
+    </main> 
+    
+</body>
+</html>
