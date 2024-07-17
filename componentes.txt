@@ -1,0 +1,10 @@
+Medir o consumo de energia | sensor de corrente
+Medir o nível de óleo/água | sensor de nível 
+Medir a temperatura e aquecimento | sensor de temperatura
+Medir vazamento de gás | sensor de gás
+Medir a rotação do motor | sensor LM393
+Verificar a vibração da máquina | giroscópio e acelerômetro
+
+motor
+led
+esp32
